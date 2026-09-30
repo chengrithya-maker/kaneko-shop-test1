@@ -1,0 +1,238 @@
+/* product cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 12px;
+}
+.card.sale {
+  border-color: var(--pinkline);
+}
+.img {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #cdd6e6, #e9dcc6);
+  display: grid;
+  place-items: center;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img > span {
+  font-size: 56px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.25);
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #fff;
+}
+.badge.pop {
+  background: #4f46e5;
+}
+.badge.off {
+  background: linear-gradient(90deg, #ff5a1f, #e11d2e);
+}
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: grid;
+  place-items: center;
+  color: #6b7280;
+}
+.heart.on {
+  color: #e11d2e;
+}
+.heart.on svg {
+  fill: #e11d2e;
+}
+.card h3 {
+  font-size: 17px;
+  margin: 12px 4px 2px;
+}
+.desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 4px 8px;
+}
+.sizes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 4px 10px;
+  min-height: 26px;
+}
+.sizes span {
+  background: var(--chip);
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 8px;
+}
+.sizes small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4px;
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 700;
+}
+.price .red {
+  color: #e11d2e;
+}
+.price s {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.go {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+}
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.qty button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+}
+
+/* cart & orders */
+.panel h2 {
+  font-size: 20px;
+  margin: 8px 0 10px;
+}
+.empty {
+  color: var(--muted);
+  padding: 14px 0;
+}
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.line span:first-child {
+  flex: 1;
+}
+.line.total {
+  font-size: 19px;
+  border: 0;
+}
+.place {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 16px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+}
+.place:disabled {
+  opacity: 0.5;
+}
+.order {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.order small {
+  color: var(--muted);
+}
+
+/* bottom nav */
+.bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background: var(--card);
+  border-top: 1px solid var(--line);
+  padding: 8px 0 14px;
+}
+.bottom button {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.bottom button.on {
+  color: var(--blue);
+  font-weight: 700;
+}
+.cnt {
+  position: absolute;
+  top: -4px;
+  left: calc(50% + 6px);
+  background: #e11d2e;
+  color: #fff;
+  font-style: normal;
+  font-size: 11px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+}
